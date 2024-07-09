@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use Illuminate\Cache\Repository;
 use Illuminate\Support\Facades\Log;
 
-class NominationSearch
+class NominatimSearch
 {
     private Repository $cache;
     private Client $client;

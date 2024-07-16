@@ -39,7 +39,11 @@ class NominatimSearch
         }
         try {
 
-            $response = $this->client->get($queryUrl);
+            $response = $this->client->get($queryUrl, [
+                'headers' => [
+                    'User-Agent' => config('app.name'),
+                ],
+            ]);
 
             if ($response->getStatusCode() !== 200) {
                 Log::error('Nominatim search failed: ' . $response->getBody());
